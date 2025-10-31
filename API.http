@@ -1,0 +1,44 @@
+@host = http://localhost:3000
+
+### Get All Tasks
+GET {{host}}/task
+Accept: application/json
+
+### Create Task
+POST {{host}}/task
+Content-Type: application/json
+
+{
+    "title": "New Task",
+    "description": "Description of the new task"
+}
+
+### Edit Task
+PATCH {{host}}/task/1
+Content-Type: application/json
+
+{
+    "title": "Updated Task",
+    "description": "Description of the updated task",
+    "status": "in_progress"
+}
+
+### Delete Task
+DELETE {{host}}/task/1
+
+### Create User
+POST {{host}}/user
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+
+### Assign User to Task
+PATCH {{host}}/task/1/assign
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
